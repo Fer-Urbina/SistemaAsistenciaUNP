@@ -1,0 +1,46 @@
+﻿@model SistemaAsistenciaUNP.Models.Asistencia
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<h4>Asistencia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SesionClaseId" class="control-label">Sesión de Clase</label>
+                <select asp-for="SesionClaseId" class ="form-control" asp-items="ViewBag.SesionClaseId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstudianteId" class="control-label">Estudiante</label>
+                <select asp-for="EstudianteId" class ="form-control" asp-items="ViewBag.EstudianteId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoAsistencia" class="control-label"></label>
+                <input asp-for="EstadoAsistencia" class="form-control" />
+                <span asp-validation-for="EstadoAsistencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Observaciones" class="control-label"></label>
+                <input asp-for="Observaciones" class="form-control" />
+                <span asp-validation-for="Observaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

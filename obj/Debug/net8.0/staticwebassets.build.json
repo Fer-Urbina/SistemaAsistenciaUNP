@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "ORfb8QbkXhhuxJP5/umuktfpXeJydswEGtDGAvugoPE=",
+  "Source": "SistemaAsistenciaUNP",
+  "BasePath": "_content/SistemaAsistenciaUNP",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SistemaAsistenciaUNP\\wwwroot",
+      "Source": "SistemaAsistenciaUNP",
+      "ContentRoot": "C:\\Users\\ferur\\OneDrive\\Documentos\\Optativa Profesional I\\SistemaAsistenciaUNP\\SistemaAsistenciaUNP\\wwwroot\\",
+      "BasePath": "_content/SistemaAsistenciaUNP",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\ferur\\OneDrive\\Documentos\\Optativa Profesional I\\SistemaAsistenciaUNP\\SistemaAsistenciaUNP\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SistemaAsistenciaUNP.styles.css",
+      "SourceId": "SistemaAsistenciaUNP",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ferur\\OneDrive\\Documentos\\Optativa Profesional I\\SistemaAsistenciaUNP\\SistemaAsistenciaUNP\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/SistemaAsistenciaUNP",
+      "RelativePath": "SistemaAsistenciaUNP.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\ferur\\OneDrive\\Documentos\\Optativa Profesional I\\SistemaAsistenciaUNP\\SistemaAsistenciaUNP\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SistemaAsistenciaUNP.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\ferur\\OneDrive\\Documentos\\Optativa Profesional I\\SistemaAsistenciaUNP\\SistemaAsistenciaUNP\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SistemaAsistenciaUNP.bundle.scp.css",
+      "SourceId": "SistemaAsistenciaUNP",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ferur\\OneDrive\\Documentos\\Optativa Profesional I\\SistemaAsistenciaUNP\\SistemaAsistenciaUNP\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/SistemaAsistenciaUNP",
+      "RelativePath": "SistemaAsistenciaUNP.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\ferur\\OneDrive\\Documentos\\Optativa Profesional I\\SistemaAsistenciaUNP\\SistemaAsistenciaUNP\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SistemaAsistenciaUNP.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\ferur\\OneDrive\\Documentos\\Optativa Profesional I\\SistemaAsistenciaUNP\\SistemaAsistenciaUNP\\wwwroot\\app.css",
+      "SourceId": "SistemaAsistenciaUNP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ferur\\OneDrive\\Documentos\\Optativa Profesional I\\SistemaAsistenciaUNP\\SistemaAsistenciaUNP\\wwwroot\\",
+      "BasePath": "_content/SistemaAsistenciaUNP",
+      "RelativePath": "app.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.css"
+    }
+  ]
+}
