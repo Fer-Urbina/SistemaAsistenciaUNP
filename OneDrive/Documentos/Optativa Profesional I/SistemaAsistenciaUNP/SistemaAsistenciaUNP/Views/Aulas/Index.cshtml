@@ -1,0 +1,104 @@
+﻿@model IEnumerable<SistemaAsistenciaUNP.Models.Aula>
+
+@{
+    ViewData["Title"] = "Aulas";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold text-dark">Aulas</h1>
+            <p class="text-muted">
+                Gestión de aulas disponibles por centro universitario.
+            </p>
+        </div>
+
+        <div>
+            <a asp-action="Create" class="btn btn-primary shadow-sm">
+                Nueva Aula
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body">
+
+            <table class="table table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Capacidad</th>
+                        <th>Ubicación</th>
+                        <th>Centro Universitario</th>
+                        <th>Estado</th>
+                        <th width="220"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td class="fw-semibold">
+                                @item.Nombre
+                            </td>
+
+                            <td>
+                                @item.Capacidad
+                            </td>
+
+                            <td>
+                                @item.Ubicacion
+                            </td>
+
+                            <td>
+                                @item.CentroUniversitario?.Nombre
+                            </td>
+
+                            <td>
+                                @if (item.Estado)
+                                {
+                                    <span class="badge bg-success">
+                                        Activa
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">
+                                        Inactiva
+                                    </span>
+                                }
+                            </td>
+
+                            <td>
+                                <a asp-action="Edit"
+                                   asp-route-id="@item.AulaId"
+                                   class="btn btn-sm btn-outline-primary">
+                                    Editar
+                                </a>
+
+                                <a asp-action="Details"
+                                   asp-route-id="@item.AulaId"
+                                   class="btn btn-sm btn-outline-secondary">
+                                    Detalles
+                                </a>
+
+                                <a asp-action="Delete"
+                                   asp-route-id="@item.AulaId"
+                                   class="btn btn-sm btn-outline-danger">
+                                    Eliminar
+                                </a>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>

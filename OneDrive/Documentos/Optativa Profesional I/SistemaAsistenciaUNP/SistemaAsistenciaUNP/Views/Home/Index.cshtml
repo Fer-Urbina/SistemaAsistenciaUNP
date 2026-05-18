@@ -1,0 +1,331 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<style>
+
+    .modulo-card {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+        .modulo-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 35px rgba(15, 23, 42, 0.18) !important;
+        }
+
+</style>
+
+<div style="max-width: 1200px; margin: auto; padding: 30px;">
+
+    <!-- HERO -->
+    <div style="
+        background: linear-gradient(135deg, #0f172a, #2563eb);
+        border-radius: 22px;
+        padding: 45px;
+        color: white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        margin-bottom: 40px;">
+
+        <div style="display:flex; align-items:center; gap:25px; flex-wrap:wrap;">
+
+            <img src="~/img/logo-unp.jpg"
+                 alt="UNP"
+                 style="
+                    width:100px;
+                    height:100px;
+                    object-fit:contain;
+                    background:white;
+                    padding:10px;
+                    border-radius:18px;" />
+
+            <div>
+                <h1 style="
+                    margin:0;
+                    font-size:48px;
+                    font-weight:700;">
+                    Sistema de Asistencia UNP
+                </h1>
+
+                <p style="
+                    margin-top:15px;
+                    font-size:20px;
+                    opacity:0.95;
+                    max-width:800px;">
+                    Plataforma para la gestión académica, control de matrículas,
+                    planificación de clases y registro de asistencia estudiantil.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- DESCRIPCIÓN -->
+    <div style="
+        background:white;
+        border-radius:18px;
+        padding:30px;
+        margin-bottom:40px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+        <h2 style="
+            margin-bottom:15px;
+            color:#111827;
+            font-size:26px;">
+            Descripción del sistema
+        </h2>
+
+        <p style="
+            color:#4b5563;
+            font-size:17px;
+            line-height:1.8;
+            margin:0;">
+            Este sistema permite administrar centros universitarios,
+            carreras académicas, docentes, estudiantes, aulas, horarios,
+            períodos académicos, matrículas y sesiones de clase.
+            Además, facilita el control de asistencia y la generación
+            de reportes académicos con filtros y exportación en PDF y CSV.
+        </p>
+    </div>
+
+    <!-- MODULOS -->
+    <h2 style="
+        margin-bottom:25px;
+        font-size:42px;
+        color:#111827;">
+        Módulos del sistema
+    </h2>
+
+    <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+        gap:22px;">
+
+        <!-- CARD -->
+        <a href="/CentroUniversitarios"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #2563eb;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Centros Universitarios</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Gestionar sedes y CUR de la universidad.
+            </p>
+        </a>
+
+        <a href="/Carreras"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #2563eb;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Carreras</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Administrar carreras académicas por centro universitario.
+            </p>
+        </a>
+
+        <a href="/Docentes"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #16a34a;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Docentes</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Gestionar información de profesores.
+            </p>
+        </a>
+
+        <a href="/Estudiantes"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #7c3aed;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Estudiantes</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Registrar y consultar estudiantes sin usar códigos confusos.
+            </p>
+        </a>
+
+        <a href="/Asignaturas"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #ea580c;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Asignaturas</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Administrar asignaturas relacionadas a carreras.
+            </p>
+        </a>
+
+        <a href="/Aulas"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #0891b2;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Aulas</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Administrar aulas disponibles por centro universitario.
+            </p>
+        </a>
+
+        <a href="/PeriodosAcademicos"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #dc2626;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Períodos Académicos</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Gestionar fechas de inicio y fin de cada período.
+            </p>
+        </a>
+
+        <a href="/Grupoes"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #9333ea;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Grupos</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Asignar asignatura, docente, aula, horario y período.
+            </p>
+        </a>
+
+        <a href="/Matriculas"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #059669;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Matrículas</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Matricular estudiantes en grupos de clase.
+            </p>
+        </a>
+
+        <a href="/SesionClases"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #0284c7;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Sesiones de Clase</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Crear sesiones para registrar asistencia por fecha.
+            </p>
+        </a>
+
+        <a href="/Asistencias"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #16a34a;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Asistencias</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Registrar estudiantes presentes, ausentes o justificados.
+            </p>
+        </a>
+
+        <a href="/Reportes"
+           class="modulo-card"
+           style="
+            background:white;
+            border-radius:18px;
+            padding:28px;
+            text-decoration:none;
+            color:#111827;
+            border-left:6px solid #ca8a04;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+
+            <h3 style="margin-bottom:15px;">Reportes</h3>
+
+            <p style="color:#4b5563; line-height:1.7;">
+                Consultar filtros y exportar reportes en PDF o CSV.
+            </p>
+        </a>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div style="
+        text-align:center;
+        margin-top:60px;
+        color:#6b7280;
+        font-size:15px;">
+        © 2026 Universidad Nacional Politécnica - Sistema de Gestión Académica
+    </div>
+
+</div>

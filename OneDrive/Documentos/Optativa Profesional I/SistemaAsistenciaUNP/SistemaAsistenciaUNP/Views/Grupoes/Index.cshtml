@@ -1,0 +1,121 @@
+﻿@model IEnumerable<SistemaAsistenciaUNP.Models.Grupo>
+
+@{
+    ViewData["Title"] = "Grupos";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Grupos</h1>
+
+    <a asp-action="Create" class="btn btn-primary">
+        Nuevo Grupo
+    </a>
+</div>
+
+<div class="mb-3">
+    <a href="/" class="btn btn-outline-secondary">
+        ← Inicio
+    </a>
+</div>
+
+<form asp-action="Index" method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="buscar" value="@ViewData["Buscar"]" class="form-control" placeholder="Buscar grupo..." />
+        <button type="submit" class="btn btn-primary">Buscar</button>
+        <a asp-action="Index" class="btn btn-secondary">Limpiar</a>
+    </div>
+</form>
+
+<table class="table table-striped table-hover shadow-sm align-middle">
+    <thead>
+        <tr>
+            <th>Grupo</th>
+            <th>Turno</th>
+            <th>Aula</th>
+            <th>Periodo académico</th>
+            <th>Horario</th>
+            <th>Asignatura</th>
+            <th>Docente</th>
+            <th>Estado</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NombreGrupo</td>
+                <td>@item.Turno</td>
+                <td>@item.Aula?.Nombre</td>
+                <td>@item.PeriodoAcademico?.Nombre</td>
+                <td>
+                    @if (item.Horario != null)
+                    {
+                        <span>
+                            @item.Horario.DiaSemana
+                            |
+                            @item.Horario.HoraInicio.ToString(@"hh\:mm")
+                            -
+                            @item.Horario.HoraFin.ToString(@"hh\:mm")
+                        </span>
+                    }
+                </td>
+                <td>@item.Asignatura?.Nombre</td>
+                <td>@item.Docente?.Nombres</td>
+
+                <td>
+                    @if (item.Estado)
+                    {
+                        <span class="badge bg-success">Activo</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Inactivo</span>
+                    }
+                </td>
+
+                <td>
+                    <div class="btn-group" role="group">
+                        <a asp-action="Edit" asp-route-id="@item.GrupoId" class="btn btn-sm btn-warning">
+                            Editar
+                        </a>
+
+                        <a asp-action="Details" asp-route-id="@item.GrupoId" class="btn btn-sm btn-info text-white">
+                            Detalles
+                        </a>
+
+                        <a asp-action="Delete" asp-route-id="@item.GrupoId" class="btn btn-sm btn-danger">
+                            Eliminar
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav>
+    <ul class="pagination">
+        @if ((int)ViewData["PaginaActual"] > 1)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-action="Index" asp-route-pagina="@((int)ViewData["PaginaActual"] - 1)" asp-route-buscar="@ViewData["Buscar"]">Anterior</a>
+            </li>
+        }
+
+        @for (int i = 1; i <= (int)ViewData["TotalPaginas"]; i++)
+        {
+            <li class="page-item @(i == (int)ViewData["PaginaActual"] ? "active" : "")">
+                <a class="page-link" asp-action="Index" asp-route-pagina="@i" asp-route-buscar="@ViewData["Buscar"]">@i</a>
+            </li>
+        }
+
+        @if ((int)ViewData["PaginaActual"] < (int)ViewData["TotalPaginas"])
+        {
+            <li class="page-item">
+                <a class="page-link" asp-action="Index" asp-route-pagina="@((int)ViewData["PaginaActual"] + 1)" asp-route-buscar="@ViewData["Buscar"]">Siguiente</a>
+            </li>
+        }
+    </ul>
+</nav>

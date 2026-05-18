@@ -1,0 +1,152 @@
+﻿@model IEnumerable<SistemaAsistenciaUNP.Models.Asistencia>
+
+@{
+    Layout = null;
+    var fechaGeneracion = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Reporte de Asistencias</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            margin: 18px;
+            color: #111827;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #111827;
+            padding-bottom: 10px;
+        }
+
+            .header h1 {
+                margin: 0;
+                font-size: 22px;
+            }
+
+            .header p {
+                margin: 4px 0 0 0;
+                font-size: 11px;
+                color: #555;
+            }
+
+        .summary {
+            margin-bottom: 12px;
+            font-size: 11px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th {
+            background-color: #111827;
+            color: white;
+            padding: 7px 5px;
+            border: 1px solid #d1d5db;
+            text-align: left;
+            font-size: 10px;
+        }
+
+        td {
+            padding: 6px 5px;
+            border: 1px solid #d1d5db;
+            vertical-align: top;
+            word-wrap: break-word;
+            font-size: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f3f4f6;
+        }
+
+        .estado-presente {
+            color: #198754;
+            font-weight: bold;
+        }
+
+        .estado-ausente {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .estado-justificado {
+            color: #0d6efd;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 10px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Reporte General de Asistencias</h1>
+        <p>Sistema de Asistencia UNP</p>
+        <p>Fecha de generación: @fechaGeneracion</p>
+    </div>
+
+    <div class="summary">
+        <strong>Total de registros:</strong> @Model.Count()
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 9%;">Fecha</th>
+                <th style="width: 15%;">Estudiante</th>
+                <th style="width: 16%;">Carrera</th>
+                <th style="width: 14%;">Asignatura</th>
+                <th style="width: 10%;">Grupo</th>
+                <th style="width: 14%;">Docente</th>
+                <th style="width: 8%;">Aula</th>
+                <th style="width: 9%;">Estado</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var estadoClase = item.EstadoAsistencia == "Presente"
+                ? "estado-presente"
+                : item.EstadoAsistencia == "Ausente"
+                ? "estado-ausente"
+                : "estado-justificado";
+
+                <tr>
+                    <td>@item.SesionClase?.Fecha.ToString("dd/MM/yyyy")</td>
+                    <td>@item.Estudiante?.Nombres @item.Estudiante?.Apellidos</td>
+                    <td>@item.Estudiante?.Carrera?.Nombre</td>
+                    <td>@item.SesionClase?.Grupo?.Asignatura?.Nombre</td>
+                    <td>@item.SesionClase?.Grupo?.NombreGrupo</td>
+                    <td>
+                        @item.SesionClase?.Grupo?.Docente?.Nombres
+                        @item.SesionClase?.Grupo?.Docente?.Apellidos
+                    </td>
+                    <td>@(item.SesionClase?.Grupo?.Aula?.Nombre ?? "No asignada")</td>
+                    <td class="@estadoClase">@item.EstadoAsistencia</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="footer">
+        Sistema de Asistencia UNP | Reporte generado automáticamente
+    </div>
+
+</body>
+</html>

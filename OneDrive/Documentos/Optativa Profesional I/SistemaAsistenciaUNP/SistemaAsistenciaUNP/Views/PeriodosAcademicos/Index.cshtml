@@ -1,0 +1,103 @@
+﻿@model IEnumerable<SistemaAsistenciaUNP.Models.PeriodoAcademico>
+
+@{
+    ViewData["Title"] = "Períodos Académicos";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold text-dark">Períodos Académicos</h1>
+            <p class="text-muted">
+                Planificación académica de clases y períodos universitarios.
+            </p>
+        </div>
+
+        <div>
+            <a asp-action="Create" class="btn btn-primary shadow-sm">
+                Nuevo Período
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body">
+
+            <table class="table table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Estado</th>
+                        <th width="220"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td class="fw-semibold">
+                                @item.Nombre
+                            </td>
+
+                            <td>
+                                @item.FechaInicio.ToString("dd/MM/yyyy")
+                            </td>
+
+                            <td>
+                                @item.FechaFin.ToString("dd/MM/yyyy")
+                            </td>
+
+                            <td>
+                                @if (item.Estado)
+                                {
+                                    <span class="badge bg-success">
+                                        Activo
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">
+                                        Inactivo
+                                    </span>
+                                }
+                            </td>
+
+                            <td>
+
+                                <a asp-action="Edit"
+                                   asp-route-id="@item.PeriodoAcademicoId"
+                                   class="btn btn-sm btn-outline-primary">
+                                    Editar
+                                </a>
+
+                                <a asp-action="Details"
+                                   asp-route-id="@item.PeriodoAcademicoId"
+                                   class="btn btn-sm btn-outline-secondary">
+                                    Detalles
+                                </a>
+
+                                <a asp-action="Delete"
+                                   asp-route-id="@item.PeriodoAcademicoId"
+                                   class="btn btn-sm btn-outline-danger">
+                                    Eliminar
+                                </a>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>
